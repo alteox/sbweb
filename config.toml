@@ -1,6 +1,6 @@
 #-------------------------------
 # General Site Settings
-baseURL = "https://alteox.github.io/sbweb"
+baseURL = "https://breckler.lu"
 languageCode = "en-us"
 title = "Sven Breckler"
 googleAnalytics = "G-QZ0H58VTGF " # Add your identifier. For example UA-99631805-1.
