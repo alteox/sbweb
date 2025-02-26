@@ -1,0 +1,45 @@
+<!-- begin header -->
+<header class="header">
+  <div class="container">
+    <div class="row">
+      <div class="header__inner col col-12">
+
+        <div class="logo">
+          <a class="logo__link" href="{{ .Site.BaseURL }}">
+            {{ if or (.Site.Params.logo) (.Site.Params.logo_dark) }}
+            <img class="logo__image" src="{{ .Site.Params.logo }}" alt="{{ .Site.Title }}">
+            <img class="logo__image__dark" src="{{ .Site.Params.logo_dark }}" alt="{{ .Site.Title }}">
+            {{ else }}
+              {{ .Site.Title }}
+            {{ end }}
+          </a>
+        </div>
+
+        <nav class="main-nav">
+          <div class="main-nav__box">
+            <div class="nav__icon-close">
+              <i class="fa-solid fa-xmark"></i>
+            </div>
+            <div class="nav__title">Menu</div>
+            <ul class="nav__list list-reset">
+              {{ range.Site.Menus.main }}
+              <li class="nav__item">
+                <a href="{{ .URL }}" class="nav__link">{{ .Name }}</a>
+              </li>
+              {{ end }}
+            </ul>
+          </div>
+        </nav>
+
+        <div class="nav-buttons">
+          <i class="nav__icon nav__icon-menu fa-solid fa-bars"></i>
+          <i class="nav__icon nav__icon-search fa-solid fa-magnifying-glass"></i>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</header>
+<!-- end header -->
+
+{{ partial "search.html" . }}

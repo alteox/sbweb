@@ -1,0 +1,29 @@
+<div class="article col col-8 push-2 col-d-12 push-d-0">
+  <div class="article__inner">
+    <div class="article__content">
+
+      <h2 class="article__title">
+        <a href="{{ .RelPermalink }}">{{ .Title }} <i class="fa-solid fa-arrow-right"></i></a>
+      </h2>
+
+      <div class="article__meta">
+        <time class="article__date" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
+          {{ .Date.Format "2 January 2006" }}
+        </time> – <span class="article__minutes">{{ .ReadingTime }} min read</span>
+      </div>
+
+      <p class="article__excerpt">{{ if .Description }}{{ .Description }}{{ else }}{{ truncate 180 .Summary | safeHTML }}{{ end }}</p>
+
+      <div class="article__bottom">
+        {{ if .Params.tags }}
+        <div class="article-tags__box">
+          {{ range ($.GetTerms "tags") }}
+          <a href="{{ .Permalink }}" class="article__tag">{{ .LinkTitle }}</a>
+          {{ end }}
+        </div>
+        {{ end }}
+      </div>
+
+    </div>
+  </div>
+</div>

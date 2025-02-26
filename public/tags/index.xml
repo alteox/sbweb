@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Sven Breckler</title>
+    <link>http://localhost:1313/tags/</link>
+    <description>Recent content in Tags on Sven Breckler</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 06 Nov 2024 15:01:35 +0300</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hobby</title>
+      <link>http://localhost:1313/tags/hobby/</link>
+      <pubDate>Wed, 06 Nov 2024 15:01:35 +0300</pubDate>
+      <guid>http://localhost:1313/tags/hobby/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Sven</title>
+      <link>http://localhost:1313/tags/sven/</link>
+      <pubDate>Wed, 06 Nov 2024 15:01:35 +0300</pubDate>
+      <guid>http://localhost:1313/tags/sven/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Workflow</title>
+      <link>http://localhost:1313/tags/workflow/</link>
+      <pubDate>Wed, 06 Nov 2024 15:01:35 +0300</pubDate>
+      <guid>http://localhost:1313/tags/workflow/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,18 @@
+<div class="col col-4 col-d-6 col-t-12">
+  <div class="widget widget-info">
+    <div class="widget__head">
+      <div class="footer-logo">
+        <div class="footer-logo__link">
+          {{ if or (.Site.Params.logo) (.Site.Params.logo_dark) }}
+          <img class="logo__image" src="{{ .Site.Params.logo }}" alt="{{ .Site.Title }}">
+          <img class="logo__image__dark" src="{{ .Site.Params.logo_dark }}" alt="{{ .Site.Title }}">
+          {{ else }}
+            {{ .Site.Title }}
+          {{ end }}
+        </div>
+      </div>
+    </div>
+    <p class="footer-text">{{ .Site.Params.hero.hero__description }}</p>
+    {{ partial "social-links.html" . }}
+  </div>
+</div>

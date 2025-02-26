@@ -1,0 +1,34 @@
+<!-- begin footer -->
+<footer class="footer">
+
+  <div class="footer__inner">
+    <div class="container">
+      <div class="row">
+        {{ partial "footer-widgets/widget-info.html" . }}
+        {{ partial "footer-widgets/widget-subscribe.html" . }}
+        {{ partial "footer-widgets/widget-tags.html" . }}
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col col-12">
+        <div class="footer__info">
+
+          <div class="copyright{{ if or (eq .Site.Params.color_scheme "light") (eq .Site.Params.color_scheme "dark") }} copyright--center{{ end }}">{{ dateFormat "2006" now }} &copy; <a href="/">{{ .Site.Title }}</a>. Crafted &amp; Designed by <a href="https://anvodstudio.com/">Anvod Studio</a>.</div>
+          {{ if or (eq .Site.Params.color_scheme "light") (eq .Site.Params.color_scheme "dark") }}
+          {{ else }}
+          <div class="toggle-theme">
+            <div class="toggle-moon"><i class="fa-solid fa-moon"></i></div>
+            <div class="toggle-sun"><i class="fa-regular fa-sun"></i></div>
+            <div class="toggle-thumb"></div>
+          </div>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+  </div>
+
+</footer>
+<!-- end footer -->

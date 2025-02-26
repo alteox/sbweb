@@ -1,0 +1,31 @@
+{{ define "main" }}
+
+<div class="container">
+  <div class="tag" {{ range first 1 .Paginator.Pages }}{{ if .Params.Image }}style="background-image: url({{ .Params.Image | absURL }});"{{ end }}{{ end }}>
+    <div class="row">
+      <div class="col col-8 push-2 col-d-12 push-d-0">
+        <div class="tag__inner">
+          <h1 class="tag__title">{{ .Title }}</h1>
+          <div class="tag__counter">
+            <span>{{ len .Pages }}</span>
+            <small>{{ if lt (len .Pages) 2 }}Article{{ else }}Articles{{ end }}</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row animate">
+
+    {{ range .Paginator.Pages }}
+      {{ partial "article-content.html" . }}
+    {{ end }}
+
+  </div>
+</div>
+
+{{ partial "pagination.html" . }}
+
+{{ end }}

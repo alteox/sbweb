@@ -1,0 +1,24 @@
+<!-- begin hero -->
+<section class="hero">
+  <div class="container">
+    <div class="row">
+      <div class="col col-12">
+        <div class="hero__inner">
+          <div class="hero__left">
+            <div class="hero__image">
+              <img src="{{ .Site.Params.hero.hero__image }}" alt="{{ .Site.Params.author.name }}'s Picture" loading="eager">
+            </div>
+          </div>
+          <div class="hero__right">
+            <h1 class="hero__title">{{ .Site.Params.hero.hero__title }}</h1>
+            <p class="hero__description">{{ .Site.Params.hero.hero__description }}</p>
+            <div class="hero__contact">
+              {{ partial "social-links.html" . }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- end hero -->

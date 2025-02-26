@@ -1,0 +1,36 @@
+{{ $paginator := .Paginator }}
+{{ if gt $paginator.TotalPages 1 }}
+<!-- begin pagination -->
+<div class="container">
+  <div class="row">
+    <div class="col col-12">
+      <nav class="pagination">
+        <div class="row">
+          <div class="col col-8 push-2 col-d-12 push-d-0">
+            <div class="pagination__inner">
+
+              <div class="pagination__list">
+                {{ if .Paginator.HasPrev }}
+                  <a href="{{ .Paginator.Prev.URL }}" class="pagination__prev"><i class="fa-solid fa-chevron-left"></i> Prev</a>
+                {{ else }}
+                  <span class="pagination__prev disabled"><i class="fa-solid fa-chevron-left"></i> Prev</span>
+                {{ end }}
+
+                <div class="pagination__count">Page {{ .Paginator.PageNumber }} of {{ .Paginator.TotalPages }}</div>
+
+                {{ if .Paginator.HasNext }}
+                  <a href="{{ .Paginator.Next.URL }}" class="pagination__next">Next <i class="fa-solid fa-chevron-right"></i></a>
+                {{ else }}
+                  <span class="pagination__next disabled">Next <i class="fa-solid fa-chevron-right"></i></span>
+                {{ end }}
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </div>
+</div>
+<!-- end pagination -->
+{{ end }}

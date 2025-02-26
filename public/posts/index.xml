@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Sven Breckler</title>
+    <link>http://localhost:1313/posts/</link>
+    <description>Recent content in Posts on Sven Breckler</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 06 Nov 2024 15:01:35 +0300</lastBuildDate>
+    <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>svens first post</title>
+      <link>http://localhost:1313/posts/svens-first-post/</link>
+      <pubDate>Wed, 06 Nov 2024 15:01:35 +0300</pubDate>
+      <guid>http://localhost:1313/posts/svens-first-post/</guid>
+      <description>&lt;p&gt;asdasdasdasd&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/05-1.jpg&#34; alt=&#34;Work&#34;&gt;&#xA;&lt;em&gt;Photo by &lt;a href=&#34;https://unsplash.com/@rmrdnl&#34;&gt;Daniel Romero&lt;/a&gt; on &lt;a href=&#34;https://unsplash.com/&#34;&gt;Unsplash&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;In qua quid est boni praeter summam voluptatem, et eam sempiternam? Cur post Tarentum ad Archytam? Qua ex cognitione facilior facta est investigatio rerum occultissimarum. Negat enim tenuissimo victu, id est contemptissimis escis et potionibus, minorem voluptatem percipi quam rebus exquisitissimis ad epulandum. Non enim iam stirpis bonum quaeret, sed animalis. Qui autem esse poteris, nisi te amor ipse ceperit? Sic igitur in homine perfectio ista in eo potissimum, quod est optimum, id est in virtute, laudatur. Natura sic ab iis investigata est, ut nulla pars caelo, mari, terra, ut poëtice loquar, praetermissa sit; Eadem nunc mea adversum te oratio est. Mihi quidem Homerus huius modi quiddam vidisse videatur in iis, quae de Sirenum cantibus finxerit.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>You must be the change you wish to see in the world</title>
+      <link>http://localhost:1313/posts/you-must-be-the-change-you-wish-to-see-in-the-world/</link>
+      <pubDate>Mon, 06 Nov 2023 15:01:35 +0300</pubDate>
+      <guid>http://localhost:1313/posts/you-must-be-the-change-you-wish-to-see-in-the-world/</guid>
+      <description>&lt;p&gt;Sin tantum est boni praeter summam voluptatem, et eam sempiternam. Cur post Tarentum ad Archytam. Qua ex cognitione facilior facta est investigatio rerum occultissimarum, empulla enim tenuissimo victu, id est contemptissimis escis et potionibus, minorem voluptatem percipi quam rebus exquisitissimis ad epulandum. Non enim iam stirpis bonum quaeret, sed animalis. Qui autem esse poteris, nisi te amor ipse ceperit. Sic igitur in homine perfectio ista in eo potissimum, quod est optimum, id est in virtute, laudatur. Natura sic ab iis investigata est, ut nulla pars caelo, mari, terra, ut poëtice loquar, praetermissa sit. Eadem nunc mea adversum te oratio est. Mihi quidem Homerus huius modi quiddam vidisse videatur in iis, quae de Sirenum cantibus ages tandem finxerit.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

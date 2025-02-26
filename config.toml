@@ -1,0 +1,131 @@
+#-------------------------------
+# General Site Settings
+baseURL = "http://breckler.lu/"
+languageCode = "en-us"
+title = "Sven Breckler"
+googleAnalytics = "G-QZ0H58VTGF " # Add your identifier. For example UA-99631805-1.
+
+#-------------------------------
+# Pagination settings:
+
+# For Hugo versions 0.128.0 and above, use the following settings:
+# This will set the number of items per page for newer versions.
+[pagination]
+  pagerSize = 5
+
+# For Hugo versions below 0.128.0, uncomment the line below and comment out the [pagination] block above:
+# paginate = 5  # Sets the number of items per page for older versions.
+
+
+#-------------------------------
+# Main Menu
+[menu]
+  [[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+
+  [[menu.main]]
+    name = "About"
+    url = "/about"
+    weight = 2
+
+  [[menu.main]]
+    name = "Contact"
+    url = "/contact"
+    weight = 4
+
+  [[menu.main]]
+    name = "Articles"
+    url = "/posts"
+    weight = 3
+
+
+[params]
+  logo = "" # You can add own logo. For example "/images/logo.png".
+  logo_dark = ""
+  description = "Sven Breckler | Tech, IT articles & Bio."
+  color_scheme = "dark" # You can choose three modes auto, light, and dark. By default, the auto mode is set, which means the user can choose the light or dark mode themself.
+
+
+  [params.author]
+    name = "Sven Breckler"
+    bio = "I'm an Entrepreneur and tech enthusiast."
+    avatar = "/images/sven.jpg"
+
+
+  #-------------------------------
+  # Hero Settings
+  [params.hero]
+    hero__title = "Hey, I’m Sven! Entrepreneur and tech enthusiast."
+    hero__description = "#AI #Server #Coding."
+    hero__image = "/images/sven.jpg"
+
+  [[params.social]]
+    icon = "fa-brands fa-x-twitter"
+    name = "Twitter"
+    link = "https://twitter.com"
+
+  [[params.social]]
+    icon = "fa-brands fa-square-facebook"
+    name = "Facebook"
+    link = "https://facebook.com"
+
+  [[params.social]]
+    icon = "fa-brands fa-instagram"
+    name = "Instagram"
+    link = "https://instagram.com"
+
+  [[params.social]]
+    icon = "fa-brands fa-youtube"
+    name = "Youtube"
+    link = "https://issdysdnstagram.com"
+
+
+  # Example of adding a new link to the footer:
+  # [[params.social]]
+  #   icon = "fa-brands fa-tiktok"
+  #   name = "TikTok"
+  #   link = "https://tiktok.com"
+
+  # Other icons can be found at https://fontawesome.com/icons
+
+
+  #-------------------------------
+  # Newsletter (partials/footer-widgets/widget-subscribe.html)
+#  [params.mailchimp]
+#    mailchimp__title = "Get interesting news"
+#    mailchimp__text = "Subscribe to our newsletter and we’ll send you the emails of latest posts."
+#    mailchimp__identifier = "gmail.us21.list-manage.com/subscribe/post?u=8aeb9c31a5c97a3a5f9ff2740&amp;id=0e31fd7793&amp" # Add your MailChimp form identifier. For example - gmail.us21.list-manage.com/subscribe/post?u=8aeb9c31a5c97a3a5f9ff2740&amp;id=0e31fd7793&amp
+#    mailchimp__button__text = "Join" # Add your button text
+
+
+  #-------------------------------
+  # Contact Settings
+  [params.contact]
+    email = "sven@breckler.lu" # Add your form_id
+
+    # NOTE
+    # Joseph comes with a built-in contact form, that you can use with Formspree service to handle up to 50 submissions per month for free. You could also easily switch to another contact form service if you want.
+
+
+  #-------------------------------
+  # Comment Section (Disqus)
+#  [params.disqus]
+#    disqusShortname = "anvodstudio-joseph" # add your shortname for Disqus Comment. For example anvodstudio-joseph
+
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+
+[markup.highlight]
+  codeFences = true
+  guessSyntax = true
+  noClasses = false
