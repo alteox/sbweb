@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "svens-first-post.md",
+                "file": "FFmpeg-Mosaic-view.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "svens-first-post"
+              "title": "FFmpeg-Mosaic-view"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "svens-first-post.md",
+                "file": "FFmpeg-Mosaic-view.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for svens-first-post"
+              "title": "Backlinks for FFmpeg-Mosaic-view"
             }
           },
           {
@@ -113,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "svens-first-post.md",
+                "file": "FFmpeg-Mosaic-view.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from svens-first-post"
+              "title": "Outgoing links from FFmpeg-Mosaic-view"
             }
           },
           {
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "svens-first-post.md",
+                "file": "FFmpeg-Mosaic-view.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of svens-first-post"
+              "title": "Outline of FFmpeg-Mosaic-view"
             }
           }
         ]
@@ -171,6 +171,6 @@
   "active": "2f003ef1fc63ff6e",
   "lastOpenFiles": [
     "you-must-be-the-change-you-wish-to-see-in-the-world.md",
-    "svens-first-post.md"
+    "FFmpeg-Mosaic-view.md"
   ]
 }
