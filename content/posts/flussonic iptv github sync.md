@@ -1,5 +1,5 @@
 ---
-title: Sync IPTV.json via github
+title: Flussonic sync IPTV.json via github
 date: 2025-03-06 15:01:35 +0300
 image: 
 tags:
