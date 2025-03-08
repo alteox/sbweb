@@ -47,7 +47,8 @@ cat > /usr/local/bin/watch-flussonic-iptv.sh << 'EOF'
 FLUSSONIC_JSON="/etc/flussonic/iptv.json"
 GIT_REPO="/opt/flussonic-config"
 LOG_FILE="/var/log/flussonic-git-sync.log"
-GIT_SSH_COMMAND="ssh -i ~/.ssh/github_flussonic -o IdentitiesOnly=yes"
+GIT_SSH_COMMAND="ssh -i /root/.ssh/id_ed25519 -o IdentitiesOnly=yes"  # UPDATED PATH
+LAST_CONTENT_HASH=""
 
 log() {
   echo "[$(date '+%Y-%m-%d %H:%M:%S')] $1" >> $LOG_FILE
@@ -61,37 +62,62 @@ fi
 
 cd $GIT_REPO
 
-log "Starting Flussonic IPTV JSON file watcher"
+# Calculate initial content hash
+LAST_CONTENT_HASH=$(md5sum "$FLUSSONIC_JSON" | awk '{print $1}')
+log "Starting Flussonic IPTV JSON file watcher (initial hash: $LAST_CONTENT_HASH)"
 
 while true; do
   inotifywait -q -e modify $FLUSSONIC_JSON
-  log "IPTV JSON file changed, pushing to GitHub"
   
-  # Copy the modified JSON to the git repo
-  cp $FLUSSONIC_JSON $GIT_REPO/iptv.json
+  # Calculate new content hash
+  CURRENT_HASH=$(md5sum "$FLUSSONIC_JSON" | awk '{print $1}')
   
-  # Commit and push the changes
-  cd $GIT_REPO
-  if git diff --quiet; then
-    log "No changes detected after copy (possibly same content)"
-  else
-    HOSTNAME=$(hostname)
-    git add iptv.json
-    git commit -m "Auto-update from $HOSTNAME (web interface change)"
+  # Only process if content actually changed
+  if [ "$CURRENT_HASH" != "$LAST_CONTENT_HASH" ]; then
+    log "IPTV JSON file content changed (hash: $CURRENT_HASH)"
+    LAST_CONTENT_HASH=$CURRENT_HASH
     
-    # Try to push with SSH authentication, but handle potential conflicts
-    export GIT_SSH_COMMAND
-    if git push origin main; then
-      log "Changes pushed to GitHub successfully"
+    # Wait a moment for file operations to complete
+    sleep 1
+    
+    # Copy the modified JSON to the git repo
+    cp $FLUSSONIC_JSON $GIT_REPO/iptv.json
+    
+    # Commit and push the changes
+    cd $GIT_REPO
+    if git diff --quiet; then
+      log "No changes detected after copy (possibly same content)"
     else
-      log "Failed to push changes, pulling first and then trying again"
-      git pull --rebase origin main
+      HOSTNAME=$(hostname)
+      git add iptv.json
+      git commit -m "Auto-update from $HOSTNAME (web interface change)"
+      
+      # Try to push with SSH authentication with better error logging
+      export GIT_SSH_COMMAND
+      log "Using SSH command: $GIT_SSH_COMMAND"
+      
       if git push origin main; then
-        log "Changes pushed after rebase"
+        log "Changes pushed to GitHub successfully"
       else
-        log "ERROR: Still failed to push changes"
+        PUSH_ERROR=$(git push origin main 2>&1)
+        log "Push error details: $PUSH_ERROR"
+        log "Attempting pull before push again"
+        
+        PULL_OUTPUT=$(git pull --rebase origin main 2>&1)
+        log "Pull output: $PULL_OUTPUT"
+        
+        if git push origin main; then
+          log "Changes pushed after rebase"
+        else
+          PUSH_ERROR2=$(git push origin main 2>&1)
+          log "ERROR: Still failed to push changes"
+          log "Final push error: $PUSH_ERROR2" 
+          log "Repository status: $(git status)"
+        fi
       fi
     fi
+  else
+    log "File modified but content unchanged, ignoring"
   fi
 done
 EOF
