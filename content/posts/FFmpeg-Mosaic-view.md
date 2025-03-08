@@ -22,37 +22,26 @@ FFMpeg command do generate Video Mosaic on Rockchip ARM
 -i udp://224.0.0.1:432?fifo_size=5000000\&overrun_nonfatal=1 \
 -c:v h264_rkmpp \
 -i udp://224.0.0.1:94?fifo_size=5000000\&overrun_nonfatal=1 \
--filter_complex "color=c=black:s=1280x720:r=24 [base];\
-[0:a]compand,showwaves=size=416x100:colors=white:draw=full:mode=cline,format=yuv420p[wave0];\
-[1:a]compand,showwaves=size=416x100:colors=white:draw=full:mode=cline,format=yuv420p[wave1];\
-[2:a]compand,showwaves=size=416x100:colors=white:draw=full:mode=cline,format=yuv420p[wave2];\
-[3:a]compand,showwaves=size=416x100:colors=white:draw=full:mode=cline,format=yuv420p[wave3];\
-[4:a]compand,showwaves=size=416x100:colors=white:draw=full:mode=cline,format=yuv420p[wave4];\
-[5:a]compand,showwaves=size=416x100:colors=white:draw=full:mode=cline,format=yuv420p[wave5];\
-[0:v]scale=416:234:force_original_aspect_ratio=decrease,pad=416:234:(ow-iw)/2:(oh-ih)/2[v0];\
-[1:v]scale=416:234:force_original_aspect_ratio=decrease,pad=416:234:(ow-iw)/2:(oh-ih)/2[v1];\
-[2:v]scale=416:234:force_original_aspect_ratio=decrease,pad=416:234:(ow-iw)/2:(oh-ih)/2[v2];\
-[3:v]scale=416:234:force_original_aspect_ratio=decrease,pad=416:234:(ow-iw)/2:(oh-ih)/2[v3];\
-[4:v]scale=416:234:force_original_aspect_ratio=decrease,pad=416:234:(ow-iw)/2:(oh-ih)/2[v4];\
-[5:v]scale=416:234:force_original_aspect_ratio=decrease,pad=416:234:(ow-iw)/2:(oh-ih)/2[v5];\
-[v0][wave0]vstack[upper0];\
-[v1][wave1]vstack[upper1];\
-[v2][wave2]vstack[upper2];\
-[v3][wave3]vstack[lower0];\
-[v4][wave4]vstack[lower1];\
-[v5][wave5]vstack[lower2];\
-[base][upper0]overlay=shortest=1:x=8:y=8[tmp1];\
-[tmp1][upper1]overlay=shortest=1:x=432:y=8[tmp2];\
-[tmp2][upper2]overlay=shortest=1:x=856:y=8[tmp3];\
-[tmp3][lower0]overlay=shortest=1:x=8:y=350[tmp4];\
-[tmp4][lower1]overlay=shortest=1:x=432:y=350[tmp5];\
-[tmp5][lower2]overlay=shortest=1:x=856:y=350" \
+-filter_complex "color=c=black:s=640x360:r=10 [base];\
+[0:v]scale=w=200:h=110:force_original_aspect_ratio=decrease,pad=200:110:(ow-iw)/2:(oh-ih)/2,fps=10[v0];\
+[1:v]scale=w=200:h=110:force_original_aspect_ratio=decrease,pad=200:110:(ow-iw)/2:(oh-ih)/2,fps=10[v1];\
+[2:v]scale=w=200:h=110:force_original_aspect_ratio=decrease,pad=200:110:(ow-iw)/2:(oh-ih)/2,fps=10[v2];\
+[3:v]scale=w=200:h=110:force_original_aspect_ratio=decrease,pad=200:110:(ow-iw)/2:(oh-ih)/2,fps=10[v3];\
+[4:v]scale=w=200:h=110:force_original_aspect_ratio=decrease,pad=200:110:(ow-iw)/2:(oh-ih)/2,fps=10[v4];\
+[5:v]scale=w=200:h=110:force_original_aspect_ratio=decrease,pad=200:110:(ow-iw)/2:(oh-ih)/2,fps=10[v5];\
+[base][v0]overlay=shortest=1:x=5:y=5[tmp1];\
+[tmp1][v1]overlay=shortest=1:x=215:y=5[tmp2];\
+[tmp2][v2]overlay=shortest=1:x=425:y=5[tmp3];\
+[tmp3][v3]overlay=shortest=1:x=5:y=125[tmp4];\
+[tmp4][v4]overlay=shortest=1:x=215:y=125[tmp5];\
+[tmp5][v5]overlay=shortest=1:x=425:y=125" \
 -c:v h264_rkmpp \
--b:v 2500k \
--maxrate 2500k \
--bufsize 2500k \
--g 24 \
--r 24 \
+-b:v 400k \
+-maxrate 400k \
+-bufsize 400k \
+-g 10 \
+-r 10 \
+-fps_mode cfr \
 -an \
 -threads 4 \
 -f mpegts \
